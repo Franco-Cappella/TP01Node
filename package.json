@@ -1,0 +1,16 @@
+{
+  "name": "ilofran",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ej1": "node src/ej1.js",
+    "ej2": "node ./src/ej2.js"
+    
+  }
+}
