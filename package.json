@@ -4,9 +4,8 @@
   "description": "",
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
-  "main": "script.js",
   "type": "module",
+  "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ej1": "node ./src/ej1.js",
@@ -14,6 +13,8 @@
     "ej3": "node ./src/ej3.js",
     "ej4": "node ./src/ej4.js",
     "ej5": "node ./src/ej5.js"
-
+  },
+  "dependencies": {
+    "currency-map-country": "^1.0.12"
   }
 }
