@@ -22,7 +22,7 @@ const OMDBSearchComplete = async (searchText) => {
         datos: []
     };
     let vectorFinal = []
-     returnObject = await axios.get(urlFinal)
+     returnObject = await axios.get(urlFinal).data
     for(let i = 1; i<=returnObject.totalResults/10; i++){
         let urlFinal = `${BASE_URL}&s=${searchText}&page=${i}`
         objetosAñadibles = await axios.get(urlFinal).data
