@@ -1,4 +1,3 @@
-//import { getCurrencyAbbreviation, getCurrencyList   } from "currency-map-country"
 import { getCurrencyAbbreviation } from "country-currency-map";
 let monedaDelPais, codigoPais;
 codigoPais = 'Argentina';

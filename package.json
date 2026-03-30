@@ -14,10 +14,11 @@
     "ej4": "node ./src/ej4.js",
     "ej5": "node ./src/ej5.js",
     "ej7": "node ./src/ej7.js",
-    "ej8": "node ./src/ej8.js"
+    "ej8": "node ./src/ej8.js",
+    "pruebAPI": "node ./src/testomdb"
   },
   "dependencies": {
-    "axios": "^1.13.6",
+    "axios": "^1.14.0",
     "country-currency-map": "^2.1.7",
     "currency-map-country": "^1.0.12",
     "install": "^0.13.0",

@@ -5,7 +5,7 @@ const Test = async () => {
 
   // Esto solo busca ‘cars’
 
-  const requestString = `http://www.omdbapi.com/?apikey=[TU_API_KEY]&s=cars`;
+  const requestString = `http://www.omdbapi.com/?apikey=1d6cd483&s=cars`;
 
   const apiResponse = await axios.get(requestString);
 
