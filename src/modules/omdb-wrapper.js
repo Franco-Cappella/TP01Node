@@ -22,15 +22,16 @@ const OMDBSearchComplete = async (searchText) => {
         datos: []
     };
     let vectorFinal = []
-     returnObject = await axios.get(urlFinal).data
+    let urlPre =  `${BASE_URL}&s=${searchText}&page=1` 
+    returnObject = await axios.get(urlPre).data
     for(let i = 1; i<=returnObject.totalResults/10; i++){
         let urlFinal = `${BASE_URL}&s=${searchText}&page=${i}`
-        objetosAñadibles = await axios.get(urlFinal).data
+        objetosAñadibles = await axios.get(urlFinal)
         vectorFinal.push(objetosAñadibles)
     }
 
 
-    return returnObject;
+    return vectorFinal;
 };
 const OMDBGetByImdbID = async (imdbID) => {
     let returnObject = {
