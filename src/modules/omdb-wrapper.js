@@ -16,22 +16,21 @@ const OMDBSearchByPage = async (searchText, page = 1) => {
     return returnObject.data;
 };
 const OMDBSearchComplete = async (searchText) => {
-    let returnObject = {
-        respuesta: false,
-        cantidadTotal: 0,
-        datos: []
-    };
-    let vectorFinal = []
-    let urlPre =  `${BASE_URL}&s=${searchText}&page=1` 
-    returnObject = await axios.get(urlPre).data
-    for(let i = 1; i<=returnObject.totalResults/10; i++){
-        let urlFinal = `${BASE_URL}&s=${searchText}&page=${i}`
-        objetosAñadibles = await axios.get(urlFinal)
-        vectorFinal.push(objetosAñadibles)
+    let vectorFinal = [];
+    let urlPre = `${BASE_URL}&s=${searchText}&page=1`;
+
+    // Obtener la primera página para calcular el total de resultados
+    let primeraRespuesta = await axios.get(urlPre);
+    let totalPages = parseInt(primeraRespuesta.data.totalResults, 10); // Acceder correctamente a data
+
+    // Recorrer todas las páginas
+    for (let i = 1; i <= totalPages; i++) {
+        let urlFinal = `${BASE_URL}&s=${searchText}&page=${i}`;
+        let respuesta = await axios.get(urlFinal);
+        vectorFinal = vectorFinal.concat(respuesta.data.Search); // Concatenar los resultados
     }
 
-
-    return vectorFinal;
+    return vectorFinal; // Retornar todos los resultados
 };
 const OMDBGetByImdbID = async (imdbID) => {
     let returnObject = {
