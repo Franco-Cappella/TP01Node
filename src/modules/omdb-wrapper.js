@@ -28,7 +28,7 @@ const OMDBSearchComplete = async (searchText) => {
         if (respuesta.data.Response === "False") {
             break; 
         }
-        vectorFinal = vectorFinal.concat(respuesta.data.Search); /
+        vectorFinal = vectorFinal.concat(respuesta.data.Search); 
     }
 
     return vectorFinal; 
